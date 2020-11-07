@@ -16,7 +16,7 @@ python main.py
 We assume that
 - `stacktrace_dir` is a directory with json files. 
 See example of file with stacktrace below.
-- `labels_path` is a csv file with header `stack_id1,stack_id2,is_similar`.
+- `labels_path` is a csv file with header `rid1,rid2,label`.
 - `method` mean name of the method for measure similarity. 
 One of the lerch, moroo, rebucket, cosine, levenshtein, brodie, prefix. 
 Also, you can pass `all` for all methods comparison.
