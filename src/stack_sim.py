@@ -9,6 +9,7 @@ from evaluation.stack_sim import auc_model
 from methods.base import SimStackModel
 from methods.brodie import BrodieModel
 from methods.cosine import CosineModel
+from methods.irving import IrvingModel
 from methods.lerch import LerchModel
 from methods.levenshtein import LevenshteinModel
 from methods.moroo import MorooModel
@@ -47,6 +48,8 @@ def create_model(stack_loader: StackLoader, method: str = 'lerch',
         model = BrodieModel(coder, -1)
     elif method == 'moroo':
         model = MorooModel(coder)
+    elif method == 'irving':
+        model = IrvingModel(coder)
     else:
         raise ValueError("Method name is not match")
     return model

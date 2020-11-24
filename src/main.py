@@ -10,7 +10,7 @@ from stack_sim import stack_sim
 # --method tracesim
 
 
-supported_methods = ['tracesim', 'lerch', 'moroo', 'rebucket', 'cosine', 'levenshtein', 'brodie', 'prefix']
+supported_methods = ['tracesim', 'irving', 'lerch', 'moroo', 'rebucket', 'cosine', 'levenshtein', 'brodie', 'prefix']
 
 
 def parse_args():
