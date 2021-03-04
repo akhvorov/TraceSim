@@ -1,7 +1,7 @@
 # TraceSim
 TraceSim is a method for measuring stacktrace similarity.
 
-We describe details of algorithm in our MaLTeSQuE 2020 paper "TraceSim: A Method for Calculating Stack Trace Similarity", which can be found here: https://arxiv.org/abs/2009.12590.
+We describe details of algorithm in our MaLTeSQuE 2020 [paper](https://dl.acm.org/doi/10.1145/3416505.3423561) "TraceSim: A Method for Calculating Stack Trace Similarity", which can be found here: https://arxiv.org/abs/2009.12590.
 
 Also, we implement other well-known methods for comparison on our data.
 
