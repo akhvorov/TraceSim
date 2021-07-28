@@ -15,17 +15,18 @@ python main.py
 
 We assume that
 - `stacktrace_dir` is a directory with json files. 
-See example of file with stacktrace below.
+See example of report file with stacktrace below.
+Expected that report files have name like `id.json`, where `id` is stacktrace id.
 - `labels_path` is a csv file with header `rid1,rid2,label`.
 - `method` mean name of the method for measure similarity. 
 One of the lerch, moroo, rebucket, cosine, levenshtein, brodie, prefix. 
 Also, you can pass `all` for all methods comparison.
 
-### Stacktrace example
+### Report example
 
 ```json
 {
-  "id": 223576912,
+  "id": 123,
   "timestamp": 1.942130912798E12,
   "class": [
     "java.lang.ClassNotFoundException",
@@ -45,9 +46,28 @@ Also, you can pass `all` for all methods comparison.
 }
 ```
 
-- `id` - unique id of stacktrace
+- `id` - unique id of report
 - `timestamp` - timestamp of error occurring
 - `class` - classes of thrown exceptions
 - `frames` - one element list of list of method calls
 
-Of course, this stacktrace is not real :)
+This file should located in `stacktrace_dir` and have name `123.json`
+
+Of course, this report is not real :)
+
+### Labels example
+
+The file with labels contains information about whether two reports are is similar or not.
+We consider reports similar if they belong to the same group, and different otherwise.
+
+Thus, for reports 123 and 124 from the same group, `123,124,1` will be written in the file. 
+For report 125 from another group, `123,125,0` will be recorded. 
+Also, by definition, it is correct to write `123,123,1`, but you should not do this.
+
+In this case, the label file may look like this
+```
+rid1,rid2,label
+123,124,1
+123,125,0
+124,125,0
+```
